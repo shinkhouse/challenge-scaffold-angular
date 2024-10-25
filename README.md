@@ -2,24 +2,29 @@
 
 ### Instructions
 
-Chorus Connector is an exciting new product to help lovers of choral music find ensembles! 
-Build an appealing application with the following features:
+Chorus Connector is an exciting new product to help lovers of choral music find ensembles. Build an appealing application with the following features, and feel free to add your own creative twists!
 
-All users:
+Public Functionality:
 - view all choruses
-- search for choruses near their location
-- optionally indicate their membership in certain choruses (up to you whether this is a direct action or requires admin approval)
+- search for choruses near me
 
-Admins:
-- create, view, edit, and delete users and choruses
-- add and remove users from choruses
+Password-Protected Functionality:
+- create, view, edit, and delete choruses
 
-`data.json` contains an initial list of people and choruses with associated cities and states. Data can be stored in-memory however you prefer. This example data includes an is_admin flag for your convenience, but how you handle user roles is up to you.
+`data.json` contains an example data model and sample list of choruses. Feel free to modify any and all of it for your needs. You do not need to build long-term data persistence (it’s ok for everything to refresh on reload), and data can be stored in-memory however you prefer. 
+Authentication can be as simple or complex as you feel appropriate for the purposes of this exercise.
+Please take no more than 2 hours to develop your solution.
 
-Other considerations (be selective, given the time constraint):
-- authentication
+What We’re Looking For:
+- does your code run?
+- does your product fulfill the core feature requirements?
+- is your code well-organized and readable?
+- is the UI and UX pleasing?
+
+Optional Considerations (be selective, given the time constraint):
 - accessibility
 - testing
+- input validation
 
 Fork this repository and expand upon it using your preferred folder structure, tooling, packages, libraries, etc.
 

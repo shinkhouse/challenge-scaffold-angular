@@ -4,6 +4,11 @@ This is a hybrid mobile app for Chorus Connector, an app allowing users to get a
 
 Developer note: I finished (most of) the functionality for viewing, searching, adding, editing, and deleting choirs. I did not finish the login and authentication in the two hours, I had planned to do that and some other clean up toward the end. I created a view for it at /login, you can also get to this by tapping the user icon on the toolbar. If I had a third hour, I would fully implement the login function with the mock data I had, probably clean up some of the user roles, and then add authentication guards to my routing to make sure non-authorized users cannot access links they don't have permission to. Would also like to add more fields for edit and add to make it more cohesive and implement Google Maps SDK to see where choirs are performing. Maybe even some fun YouTube videos or self-hosted vids of performances or Instagram API. 
 
+Thanks for the opportunity. Cheers!
+### ChatGPT Usage
+I used ChatGPT to generate chorus and user mock data, along with TypeScript interfaces for both. I also used it for a couple troubleshooting things I needed a refresher on.
+https://chatgpt.com/share/671eca8e-c004-8011-9d2e-27e432382d15
+
 ### Instructions
 This template provides a minimal setup for an Angular app. Note that the Angular CLI requires Node.js v14.20+, v16.14+ or v18.10+. To run the app:
 ```
@@ -12,6 +17,12 @@ npm install
 npm install -g @ionic/cli
 ionic serve
 ```
+
+
+If this doesn't work, you can also view it here:
+https://shinkhouse.github.io/challenge-scaffold-angular/choruses
+
+I may have incorrectly imported the icons when building it to my GitHub Pages, but it works locally.
 
 ### Original Instructions
 

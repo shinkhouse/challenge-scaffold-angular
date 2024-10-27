@@ -1,0 +1,12 @@
+<ion-list>
+  <ion-item routerLink="/chorus-details/{{choir?.id}}">
+    <ion-thumbnail slot="start">
+      <img [src]="choir?.logo_url" alt="Choir Image" />
+    </ion-thumbnail>
+    <ion-label>
+      <h2>{{choir?.name}}</h2>
+      <p>{{choir?.location?.city}}, {{choir?.location?.state}}</p>
+      <p>{{getChorusSections()}}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

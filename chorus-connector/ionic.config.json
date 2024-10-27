@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "chorus-connector": {
+      "name": "chorus-connector",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular",
+      "root": "src"
+    }
+  },
+  "defaultProject": "chorus-connector"
+}

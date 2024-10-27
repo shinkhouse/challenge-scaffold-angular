@@ -1,0 +1,15 @@
+<ion-content>
+  <div *ngIf="!choruses || choruses.length === 0">
+    <ion-text color="medium" class="ion-text-center">
+      <h2>No choruses found</h2>
+    </ion-text>
+  </div>
+  <div *ngIf="choruses && choruses.length > 0">
+    <ion-list>
+      <app-chorus-list-item
+        *ngFor="let choir of choruses"
+        [choir]="choir"
+      ></app-chorus-list-item>
+    </ion-list>
+  </div>
+</ion-content>

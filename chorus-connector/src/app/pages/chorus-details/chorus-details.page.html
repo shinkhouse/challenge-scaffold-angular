@@ -1,0 +1,132 @@
+<ion-header mode="md">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button mode="ios" routerLink="/choruses">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Chorus Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button mode="ios" (click)="editMode = true">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!editMode" class="ion-padding background">
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img [src]="choir?.logo_url" alt="Choir Image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ choir?.name }}</h2>
+        <p>{{ choir?.location?.city }}, {{ choir?.location?.state }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>Description</h3>
+        <p>{{ choir?.description }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>Contact Email</h3>
+        <p>{{ choir?.contact_email }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>Number of Members</h3>
+        <p>{{ choir?.number_of_members }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>Supported Voices</h3>
+        <p>{{ choir?.supported_voices?.join(', ') }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>Website</h3>
+        <a [href]="choir?.website" target="_blank">{{ choir?.website }}</a>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="choir?.social_media?.facebook">
+      <ion-label>
+        <h3>Facebook</h3>
+        <a [href]="choir?.social_media?.facebook" target="_blank">{{ choir?.social_media?.facebook }}</a>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="choir?.social_media?.twitter">
+      <ion-label>
+        <h3>Twitter</h3>
+        <a [href]="choir?.social_media?.twitter" target="_blank">{{ choir?.social_media?.twitter }}</a>
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="choir?.social_media?.instagram">
+      <ion-label>
+        <h3>Instagram</h3>
+        <a [href]="choir?.social_media?.instagram" target="_blank">{{ choir?.social_media?.instagram }}</a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-content *ngIf="editMode" class="ion-padding background">
+  <form [formGroup]="choirForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea formControlName="description" required></ion-textarea>
+    </ion-item>
+    <div formGroupName="location">
+      <ion-item>
+        <ion-label position="floating">City</ion-label>
+        <ion-input formControlName="city" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">State</ion-label>
+        <ion-input formControlName="state" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Zip Code</ion-label>
+        <ion-input formControlName="zip_code" required></ion-input>
+      </ion-item>
+    </div>
+    <ion-item>
+      <ion-label position="floating">Contact Email</ion-label>
+      <ion-input formControlName="contact_email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Number of Members</ion-label>
+      <ion-input type="number" formControlName="number_of_members" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Website</ion-label>
+      <ion-input formControlName="website" required></ion-input>
+    </ion-item>
+    <div formGroupName="social_media">
+      <ion-item>
+        <ion-label position="floating">Facebook</ion-label>
+        <ion-input formControlName="facebook"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Twitter</ion-label>
+        <ion-input formControlName="twitter"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Instagram</ion-label>
+        <ion-input formControlName="instagram"></ion-input>
+      </ion-item>
+    </div>
+    <ion-button expand="full" type="submit">Save</ion-button>
+    <ion-button expand="full" color="danger" (click)="onDelete()">Delete</ion-button>
+  </form>
+</ion-content>

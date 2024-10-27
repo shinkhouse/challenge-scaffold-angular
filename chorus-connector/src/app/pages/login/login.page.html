@@ -1,0 +1,51 @@
+<div class="logo-container">
+  <img src="https://app.chorusconnection.com/white-logo.png" alt="Chorus Connection" />
+  <h1>Sign in to your Account</h1>
+  <p>Don’t have an account? <a href="#">Sign Up</a></p>
+</div>
+<ion-content class="ion-padding login-container">
+  <ion-input
+    label="Email"
+    type="email"
+    fill="outline"
+    label-placement="floating"
+    placeholder="Email Address"
+    [(ngModel)]="email"
+    required
+  ></ion-input>
+  <br />
+  <ion-input
+    label="Password"
+    type="password"
+    fill="outline"
+    label-placement="floating"
+    placeholder="Password"
+    [(ngModel)]="password"
+    required
+  ></ion-input>
+
+  <ion-item lines="none">
+    <ion-checkbox [(ngModel)]="rememberMe" slot="start"></ion-checkbox>
+    <ion-label>Remember me</ion-label>
+    <a class="forgot-password" href="#">Forgot Password?</a>
+  </ion-item>
+
+  <ion-button expand="block" (click)="login()">Log In</ion-button>
+
+  <div class="social-login">
+    <span>Or login with</span>
+    <ion-button fill="clear">
+      <ion-icon name="logo-google"></ion-icon>
+      Google
+    </ion-button>
+    <ion-button fill="clear">
+      <ion-icon name="logo-facebook"></ion-icon>
+      Facebook
+    </ion-button>
+  </div>
+
+  <p class="agreement">
+    By signing up, you agree to the <a href="#">Terms of Service</a> and
+    <a href="#">Data Processing Agreement</a>
+  </p>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header mode="md">
+  <ion-toolbar color="primary">
+    <ion-title>Chorus Admin</ion-title>
+    <ion-buttons slot="end">
+      <ion-button mode="ios" routerLink="/add-chorus">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+      <ion-button mode="ios" routerLink="/login">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <div class="search-toolbar">
+      <ion-searchbar
+        [(ngModel)]="searchTerm"
+        placeholder="Search Choruses or Location"
+        mode="ios"
+        (ionInput)="searchChoruses()"
+      ></ion-searchbar>
+      <ion-buttons slot="end">
+        <ion-button mode="ios">
+          <ion-icon slot="icon-only" name="filter"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+  <app-choruses-list [choruses]="choruses"></app-choruses-list>
+</ion-content>

@@ -1,0 +1,12 @@
+ion-content {
+    --background: url('../../../assets/images/houston.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.search-toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+}

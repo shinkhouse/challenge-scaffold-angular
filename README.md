@@ -1,6 +1,19 @@
 # Chorus Connector
 
+This is a hybrid mobile app for Chorus Connector, an app allowing users to get a showcase of choirs around the United States. It includes a landing page for users to see choirs in their location and also allows them to search for choirs in other cities either by name or location. Owners or board members of choirs can also manage their own choirs from My Choruses, and employees of Chorus Connector can edit all choirs.
+
+Developer note: I finished (most of) the functionality for viewing, searching, adding, editing, and deleting choirs. I did not finish the login and authentication in the two hours, I had planned to do that and some other clean up toward the end. I created a view for it at /login, you can also get to this by tapping the user icon on the toolbar. If I had a third hour, I would fully implement the login function with the mock data I had, probably clean up some of the user roles, and then add authentication guards to my routing to make sure non-authorized users cannot access links they don't have permission to. Would also like to add more fields for edit and add to make it more cohesive and implement Google Maps SDK to see where choirs are performing. Maybe even some fun YouTube videos or self-hosted vids of performances or Instagram API. 
+
 ### Instructions
+This template provides a minimal setup for an Angular app. Note that the Angular CLI requires Node.js v14.20+, v16.14+ or v18.10+. To run the app:
+```
+cd chorus-connector
+npm install
+npm install -g @ionic/cli
+ionic serve
+```
+
+### Original Instructions
 
 Chorus Connector is an exciting new product to help lovers of choral music find ensembles. Build an appealing application with the following features, and feel free to add your own creative twists!
 

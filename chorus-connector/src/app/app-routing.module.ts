@@ -22,7 +22,8 @@ const routes: Routes = [
   {
     path: 'add-chorus',
     loadChildren: () => import('./pages/add-chorus/add-chorus.module').then( m => m.AddChorusPageModule)
-  }
+  },
+  { path: '', redirectTo: 'choruses', pathMatch: 'full' }
 ];
 
 @NgModule({

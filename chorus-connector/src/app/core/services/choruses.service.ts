@@ -4,6 +4,8 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { ChorusData } from "../mock/choruses";
 import { Choir, Choruses } from "../models/chorus";
+import { US_STATES } from "../mock/us-states";
+import { COUNTRIES } from "../mock/countries";
 
 @Injectable({
   providedIn: 'root',
@@ -75,5 +77,13 @@ export class ChorusesService {
 
   getFilteredChoruses() {
     return this.filteredChoruses.asObservable();
+  }
+
+  getUSStates() {
+    return US_STATES;
+  }
+
+  getCountries() {
+    return COUNTRIES;
   }
 }

@@ -14,6 +14,7 @@ export class ChorusDetailsPage implements OnInit {
   public editMode = false;
   public choir: Choir | null = null;
   public choirForm: FormGroup;
+  public states = this.choirService.getUSStates();
 
   constructor(
     private route: ActivatedRoute,

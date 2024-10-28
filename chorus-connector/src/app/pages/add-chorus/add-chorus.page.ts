@@ -11,6 +11,7 @@ import { ChorusesService } from 'src/app/core/services/choruses.service';
 export class AddChorusPage implements OnInit {
   public editMode = false;
   public choirForm: FormGroup;
+  public states = this.choirService.getUSStates();
 
   constructor(
     private router: Router,

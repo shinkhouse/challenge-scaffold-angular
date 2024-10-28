@@ -73,4 +73,8 @@ export class ChorusDetailsPage implements OnInit {
   isUserAdmin(): boolean {
     return this.auth.isUserAdmin();
   }
+
+  getFriendlyVoiceTypes(): string {
+    return this.choirService.getFriendlyVoiceTypes(this.choir!);
+  }
 }

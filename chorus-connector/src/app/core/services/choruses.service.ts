@@ -86,4 +86,16 @@ export class ChorusesService {
   getCountries() {
     return COUNTRIES;
   }
+
+  getFriendlyVoiceTypes(choir: Choir): string {
+    if (choir?.supported_voices.length === 0) {
+      return '';
+    } else {
+      return choir?.supported_voices
+        .map((voice: string) => {
+          return voice.charAt(0).toUpperCase() + voice.slice(1);
+        })
+        .join(', ');
+    }
+  }
 }

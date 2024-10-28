@@ -34,7 +34,7 @@
     <ion-item>
       <ion-label>
         <h3>Contact Email</h3>
-        <p>{{ choir?.contact_email }}</p>
+        <a [href]="choir?.contact_email" target="_blank">{{ choir?.contact_email }}</a>
       </ion-label>
     </ion-item>
     <ion-item>
@@ -46,7 +46,7 @@
     <ion-item>
       <ion-label>
         <h3>Supported Voices</h3>
-        <p>{{ choir?.supported_voices?.join(', ') }}</p>
+        <p>{{getFriendlyVoiceTypes()}}</p>
       </ion-label>
     </ion-item>
     <ion-item>

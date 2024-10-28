@@ -1,4 +1,5 @@
 # Chorus Connector
+![Chorus Connector Preview](https://github.com/user-attachments/assets/7f743a41-51b7-4c6c-95b3-999b8937761d)
 
 This is a hybrid mobile app for Chorus Connector, an app allowing users to get a showcase of choirs around the United States. It includes a landing page for users to see choirs in their location and also allows them to search for choirs in other cities either by name or location. Owners or board members of choirs can also manage their own choirs from My Choruses, and employees of Chorus Connector can edit all choirs.
 

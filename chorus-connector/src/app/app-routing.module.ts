@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './core/guards/admin-guard.guard';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule) },
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'my-choruses',
-    loadChildren: () => import('./pages/my-choruses/my-choruses.module').then( m => m.MyChorusesPageModule)
+    loadChildren: () => import('./pages/my-choruses/my-choruses.module').then( m => m.MyChorusesPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'chorus-details',
@@ -23,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'add-chorus',
-    loadChildren: () => import('./pages/add-chorus/add-chorus.module').then( m => m.AddChorusPageModule)
+    loadChildren: () => import('./pages/add-chorus/add-chorus.module').then( m => m.AddChorusPageModule),
+    canActivate: [AuthGuard, AdminGuard]
   },
   { path: '', redirectTo: 'choruses', pathMatch: 'full' }
 ];

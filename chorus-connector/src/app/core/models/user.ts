@@ -5,6 +5,7 @@ export interface User {
   email: string;
   password: string; // for demonstration purposes only
   roles: Role[];
+  chorus_ownership?: string[];
 }
 
 export type Users = User[];

@@ -6,7 +6,7 @@
       </ion-button>
     </ion-buttons>
     <ion-title>Chorus Details</ion-title>
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" *ngIf="isUserAdmin()">
       <ion-button mode="ios" (click)="editMode = true">
         <ion-icon slot="icon-only" name="create"></ion-icon>
       </ion-button>

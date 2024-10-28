@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Choir } from 'src/app/core/models/chorus';
 import { ChorusesService } from 'src/app/core/services/choruses.service';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
 @Component({
   selector: 'app-chorus-details',
@@ -18,7 +19,8 @@ export class ChorusDetailsPage implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
-    private choirService: ChorusesService
+    private choirService: ChorusesService,
+    private auth: AuthenticationService
   ) {
     this.choirForm = this.fb.group({
       name: ['', Validators.required],
@@ -65,5 +67,9 @@ export class ChorusDetailsPage implements OnInit {
       this.choirService.deleteChorusById(this.choir.id);
       this.router.navigate(['/choruses']);
     }
+  }
+
+  isUserAdmin(): boolean {
+    return this.auth.isUserAdmin();
   }
 }

@@ -17,7 +17,8 @@ export const users: Users = [
       roles: [
         { role_id: "2", role_name: "Editor" },
         { role_id: "3", role_name: "Viewer" }
-      ]
+      ],
+      chorus_ownership: ['a7e5f710-b22a-4c89-8f3d-3c2d9e41d515']
     },
     {
       name: "Carol White",

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from './core/guards/admin-guard.guard';
 
 const routes: Routes = [
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule) },
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'chorus-admin',
-    loadChildren: () => import('./pages/chorus-admin/chorus-admin.module').then( m => m.ChorusAdminPageModule)
+    loadChildren: () => import('./pages/chorus-admin/chorus-admin.module').then( m => m.ChorusAdminPageModule),
+    canActivate: [AdminGuard]
   },
   {
     path: 'add-chorus',

@@ -18,11 +18,23 @@ npm install -g @ionic/cli
 ionic serve
 ```
 
-
 If this doesn't work, you can also view it here:
 https://shinkhouse.github.io/challenge-scaffold-angular/choruses
 
 I may have incorrectly imported the icons when building it to my GitHub Pages, but it works locally.
+You can checkout the git commit where I stopped around 2 hours in:
+git checkout 408d8cb14256554bfb392d53a9abe37f1ec37d61
+
+### Extra Credit
+I finished the authentication services and related guards. You may login with the following credentials:
+#### Admin
+alice.johnson@example.com
+password123
+
+#### Viewer
+carol.white@example.com
+mySecret789
+
 
 ### Original Instructions
 

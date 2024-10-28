@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -11,16 +13,16 @@ export class LoginPage {
   rememberMe: boolean = false;
   passwordVisible: boolean = false;
 
-  constructor() {}
+  constructor(private auth: AuthenticationService, private router: Router) {}
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
   }
 
   login() {
-    // Handle login logic here
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
-    console.log('Remember me:', this.rememberMe);
+      const authentication = this.auth.login(this.email, this.password);
+      if (authentication.success) {
+          this.router.navigateByUrl('/choruses');
+      }
   }
 }

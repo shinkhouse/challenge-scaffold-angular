@@ -10,7 +10,7 @@
         <ion-icon src="../assets/icons/music.svg"></ion-icon>
         My Choruses
       </ion-tab-button>
-      <ion-tab-button tab="chorus-admin">
+      <ion-tab-button *ngIf="isUserAdmin()" tab="chorus-admin">
         <ion-icon src="../assets/icons/settings.svg"></ion-icon>
         Admin
       </ion-tab-button>
